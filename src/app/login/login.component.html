@@ -1,0 +1,85 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Login</h2>
+          <form (ngSubmit)="login()" #loginForm="ngForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                [(ngModel)]="user.email"
+                required
+                minlength="5"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <input
+                  type="{{ passwordFieldType }}"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  required
+                  minlength="5"
+                />
+                <button
+                  class="mostrar-ocultar btn btn-outline-secondary"
+                  type="button"
+                  (click)="togglePasswordVisibility()"
+                  (click)="mostrarPassword = !mostrarPassword"
+                >
+                  <img
+                    *ngIf="mostrarPassword"
+                    src="assets/images/cerrar-ojo.png"
+                    alt="Ojo cerrado"
+                  />
+                  <img
+                    *ngIf="!mostrarPassword"
+                    src="assets/images/abrir-ojo.png"
+                    alt="Ojo abierto"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- BOTONES -->
+            <div class="mb-3">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="loginForm.invalid"
+              >
+                Login
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="navigateToRegistration()"
+              >
+                Registro
+              </button>
+            </div>
+
+            <!-- ALERT POR ERROR EN MAIL O PASS -->
+            <div
+              class="alert alert-danger"
+              *ngIf="loginForm.submitted && loginForm.invalid"
+            >
+              Por favor, ingrese un email y contraseña válidos (más de 4
+              caracteres).
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

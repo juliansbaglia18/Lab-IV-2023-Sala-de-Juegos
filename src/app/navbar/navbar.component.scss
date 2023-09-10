@@ -1,0 +1,178 @@
+.nav{
+    
+}
+
+#btn-home{
+  cursor: pointer;
+}
+#btn-cerrar-sesion{
+  cursor: pointer;
+}
+
+.neonText {
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #bc13fe,
+      0 0 82px #bc13fe,
+      0 0 92px #bc13fe,
+      0 0 102px #bc13fe,
+      0 0 151px #bc13fe;
+  }
+  .punto {
+    //   flex: auto;
+    // width: 4px;
+    // height: 4px;
+    // border-radius: 50%;
+    // background-color: #fff;
+    // box-shadow:
+    //   0 0 60px 30px #fff,  /* inner white */
+    //   0 0 100px 60px #f0f, /* middle magenta */
+    //   0 0 140px 90px #0ff; /* outer cyan */
+    position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 50px #fff,
+    inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff,
+    inset 20px 0 300px #f0f,
+    inset -20px 0 300px #0ff,
+    0 0 50px #fff,
+    -10px 0 80px #f0f,
+    10px 0 80px #0ff;
+  }
+
+  .main-nav {
+    height: 40px;
+    padding: 0;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    // margin-top: 100px;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    perspective-origin: bottom;
+    > li {
+        width: 400px;
+        height: 40px;
+        position: relative;
+        margin: 0 20px 0 20px;
+        transform-style: preserve-3d;
+        transform-origin: 0px -0px;
+        transition: all .5s cubic-bezier(0.7, 0.1, 0.76, 1.5);
+        box-shadow: 0 0 3px 2px #fff, 0 0 7px #fff, 0 0 14px #fff, 0 0 20px #228DFF, 0 0 50px #228DFF, 0 0 60px #228DFF, 0 0 150px 30px #228DFF, inset 0 0 3px 1px #fff, inset 0 0 5px 3px #fff, inset 0 0 20px #228DFF, inset 0 0 50px #228DFF, inset 0 0 80px #228DFF;
+      &:hover {
+        box-shadow: none;
+        transform: rotateX(90deg) translateY(-40px);
+      }
+    }
+     li {
+      display: inline-block;
+      line-height: 36px;
+      height: 40px;
+      transition: transform 1s cubic-bezier(0.4, 0, 0, 0.95);
+      border-radius: 5px;
+      }
+  }
+  
+  /* Style The Dropdown Button */
+.dropbtn {
+  background-color: #006eff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  right: 0;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #00a0fd;
+}
+
+  .drop-down {
+    padding: 0;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+    left: -2px;
+    transform-origin: 0px 0px;
+    transform: rotateX(-90deg);
+    transition: all .5s cubic-bezier(0.7, 0.1, 0.76, 1.5);
+      li {
+      width: 100%;
+      margin: 0;
+      }
+  }
+  
+  .main-nav li:hover .drop-down {
+    box-shadow: 0 0 3px 2px #fff, 0 0 7px #fff, 0 0 14px #fff, 0 0 20px #228DFF, 0 0 50px #228DFF, 0 0 60px #228DFF, 0 0 150px 30px #228DFF, inset 0 0 3px 1px #fff, inset 0 0 5px 3px #fff, inset 0 0 20px #228DFF, inset 0 0 50px #228DFF, inset 0 0 80px #228DFF;
+    background-color: #000;
+  }
+  
+  .drop-down li:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #228DFF, 0 0 30px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 70px #228DFF;
+    font-weight: bold;
+  }
+  
+  .main-content {
+    width: calc(100% - 60px);
+    margin: 100px auto;
+    border-radius: 6px;
+    min-height: 500px;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    align-items: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    min-width: calc(50% - 60px);
+    margin: 30px;
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 3px 2px #fff, 0 0 7px #fff, 0 0 14px #fff, 0 0 20px #228DFF, 0 0 50px #228DFF, 0 0 60px #228DFF, 0 0 150px 30px #228DFF, inset 0 0 3px 1px #fff, inset 0 0 5px 3px #fff, inset 0 0 20px #228DFF, inset 0 0 50px #228DFF, inset 0 0 80px #228DFF;
+  }

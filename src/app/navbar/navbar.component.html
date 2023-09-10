@@ -1,0 +1,58 @@
+<!-- <nav class="nav nav-pills">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 ms-auto">
+        <button class="btn"></button>
+        <button class="btn btn-outline-danger me-2" type="button">
+          <div class="text h3 neonText">Quien soy</div>
+        </button>
+        <div class="punto"></div>
+      </div>
+      <div class="col-md-3 ms-auto"></div>
+      <div class="col-md-3 ms-auto">
+        <ul class="main-nav">
+          <li>
+            Nombre - Apellido
+            <ul class="drop-down">
+              <li>Dato 1</li>
+              <li>Dato 2</li>
+              <li>Dato 3</li>
+              <li class="neonText">CERRAR SESIÓN</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+     
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="col-auto">
+      <button class="btn btn-outline-primary" (click)="navigateToQuienSoy()">
+        <div class="h4">Quien soy</div>
+      </button>
+    </div>
+    <div class="col-auto mx-auto">
+      <div class="img" (click)="navigateToHome()" id="btn-home">
+        <img src="../../favicon.ico" alt="" />
+      </div>
+    </div>
+    <div class="col-auto">
+      <li class="nav-item dropdown">
+        <div class="dropdown">
+          <button class="dropbtn h4">Nombre - Usuario</button>
+          <div class="dropdown-content">
+            <a href="#">Dato usuario 1</a>
+            <a href="#">Dato usuario 2</a>
+            <a href="#">Dato usuario 3</a>
+            <a (click)="navigateToLogin()" id="btn-cerrar-sesion">
+              <strong> CERRAR SESIÓN </strong>
+            </a>
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</nav>

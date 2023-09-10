@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    // background-image: url('/assets/images/arcade-wallpaper2.jpg');
+    background-image: url('/assets/images/background-mario.jpg');
+    background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+}

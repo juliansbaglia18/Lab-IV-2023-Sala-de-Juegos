@@ -1,0 +1,104 @@
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Registro</h2>
+          <form (ngSubmit)="register()" #registerForm="ngForm">
+            <!-- INPUTS -->
+            <!-- MAIL -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                [(ngModel)]="user.email"
+                required
+                minlength="4"
+              />
+            </div>
+            <!-- PASSWORD -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <div class="d-flex align-items-center">
+                <input
+                  type="{{ passwordFieldType }}"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="user.password"
+                  required
+                  minlength="4"
+                />
+                <button
+                  class="mostrar-ocultar btn btn-outline-secondary"
+                  type="button"
+                  (click)="togglePasswordVisibility()"
+                >
+                  <img
+                    *ngIf="mostrarPassword"
+                    src="assets/images/cerrar-ojo.png"
+                    alt="Ojo cerrado"
+                  />
+                  <img
+                    *ngIf="!mostrarPassword"
+                    src="assets/images/abrir-ojo.png"
+                    alt="Ojo abierto"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- CONFIRMAR PASSWORD -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label"
+                >Confirmar Contraseña</label
+              >
+              <input
+                type="{{ passwordFieldType }}"
+                class="form-control"
+                id="confirmPassword"
+                name="confirmPassword"
+                [(ngModel)]="user.confirmPassword"
+                required
+                minlength="5"
+              />
+            </div>
+            <!-- BOTONES -->
+            <div class="mb-3">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="
+                  registerForm.invalid || user.password !== user.confirmPassword
+                "
+              >
+                Registrarse
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="navigateToLogin()"
+              >
+                Login
+              </button>
+            </div>
+
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                registerForm.submitted &&
+                (registerForm.invalid || user.password !== user.confirmPassword)
+              "
+            >
+              Por favor, ingrese un email válido y contraseñas coincidentes (más
+              de 4 caracteres).
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

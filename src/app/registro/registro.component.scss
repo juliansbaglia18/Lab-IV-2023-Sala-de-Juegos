@@ -1,0 +1,28 @@
+.card {
+    margin-top: 20px;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .mostrar-ocultar {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    z-index: 1;
+    padding: 0; /* Elimina el relleno del botón */
+    width: 30px; /* Establece el ancho deseado del botón */
+    height: 30px; /* Establece la altura deseada del botón */
+    background: transparent; /* Establece el fondo transparente para que las imágenes sean visibles */
+    border: none; /* Elimina el borde del botón */
+    cursor: pointer; /* Cambia el cursor al puntero cuando se pasa por encima del botón */
+  }
+  
+  .mostrar-ocultar img {
+    max-width: 100%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
+    max-height: 100%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
+  }
+  
+  .alert {
+    margin-top: 10px;
+  }
