@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -13,20 +14,20 @@ export class LoginComponent {
   mostrarPassword = false;
   
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private userService: UserService) {}
 
   login() {
-    // Aquí puedes agregar la lógica de autenticación con Firebase
-    // Por ejemplo, verificar las credenciales y redirigir al usuario a la página de inicio (home) si es válido.
-    // Si las credenciales no son válidas, puedes mostrar un mensaje de error.
-    // Esto es solo un ejemplo básico de cómo podría ser la lógica.
-    this.router.navigateByUrl('home');
-    // if (this.user.email === 'usuario@example.com' && this.user.password === 'contraseña') {
-    //   this.router.navigateByUrl('home');
-    // } else {
-    //   // Mostrar mensaje de error
-    // }
+    this.userService.login(this.user)
+      .then(() => {
+        // Si está registrado, va al Home.
+        this.router.navigateByUrl('home');
+      })
+      .catch((error) => {
+        // Mensaje de error. (MODIFICAR)
+        console.error('Error al iniciar sesión:', error);
+      });
   }
+  
 
   togglePasswordVisibility() {
     this.passwordHidden = !this.passwordHidden;

@@ -74,6 +74,7 @@
                 [disabled]="
                   registerForm.invalid || user.password !== user.confirmPassword
                 "
+                (click)="register()"
               >
                 Registrarse
               </button>

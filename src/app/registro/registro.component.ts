@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '@firebase/auth';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-registro',
@@ -12,20 +14,27 @@ export class RegistroComponent {
   passwordFieldType = 'password';
   mostrarPassword = false;
 
-  constructor(private router: Router) {}
+
+
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    ) {}
 
   register() {
-    // Aquí puedes agregar la lógica de registro con Firebase
-    // Por ejemplo, crear una cuenta de usuario con el email y la contraseña
-    // y luego redirigir al usuario a la página de inicio (home) si el registro es exitoso.
-    // Si el registro no es exitoso, puedes mostrar un mensaje de error.
-    // Esto es solo un ejemplo básico de cómo podría ser la lógica.
+    // Llama a la función register del servicio UserService
+  this.userService.register({
+    email: this.user.email,
+    password: this.user.password,
+  })
+  .then((result) => {
+    // El registro fue exitoso, puedes redirigir al usuario a la página de inicio (home)
     this.router.navigateByUrl('home');
-    // if (registroExitoso) {
-    //   this.router.navigateByUrl('home');
-    // } else {
-    //   // Mostrar mensaje de error
-    // }
+  })
+  .catch((error) => {
+    // Mensaje de error. (MODIFICAR)
+    console.error('Error al registrar:', error);
+  });
   }
 
   togglePasswordVisibility() {

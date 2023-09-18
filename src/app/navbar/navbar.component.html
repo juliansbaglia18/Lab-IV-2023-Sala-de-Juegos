@@ -46,13 +46,13 @@
       <li class="nav-item dropdown">
         <div class="dropdown">
           <button class="dropbtn rounded">
-            <div class="h4">[nombre y apellido]</div>
+            <div class="h4">{{ emailUser }}</div>
           </button>
           <div class="dropdown-content">
             <a href="#">[Dato usuario 1]</a>
             <a href="#">[Dato usuario 2]</a>
             <a href="#">[Dato usuario 3]</a>
-            <a (click)="navigateToLogin()" id="btn-cerrar-sesion">
+            <a (click)="logOut()" id="btn-cerrar-sesion">
               <strong> CERRAR SESIÓN </strong>
             </a>
           </div>
