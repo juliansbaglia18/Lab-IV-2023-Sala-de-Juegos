@@ -9,12 +9,17 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   constructor(private router: Router) {}
 
+  // Navegar a la página Home
   navigateToHome(){
     this.router.navigateByUrl('home');
   }
+
+  // Navegar a la página Login
   navigateToLogin(){
     this.router.navigateByUrl('login');
   }
+
+  // Navegar a la página Quien Soy
   navigateToQuienSoy(){
     this.router.navigateByUrl('quien-soy');
   }

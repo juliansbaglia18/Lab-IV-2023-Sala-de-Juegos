@@ -5,19 +5,22 @@
         <div class="card-body">
           <h2 class="card-title">Login</h2>
           <form (ngSubmit)="login()" #loginForm="ngForm">
+            <!-- EMAIL -->
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
+                value="example@mail.com"
                 name="email"
                 [(ngModel)]="user.email"
                 required
                 minlength="5"
               />
             </div>
-
+            <!-- EMAIL END -->
+            <!-- PASSWORD -->
             <div class="mb-3">
               <label for="password" class="form-label">Password</label>
               <div class="input-group">
@@ -26,6 +29,7 @@
                   class="form-control"
                   id="password"
                   name="password"
+                  value="example"
                   [(ngModel)]="user.password"
                   required
                   minlength="5"
@@ -49,8 +53,8 @@
                 </button>
               </div>
             </div>
-
-            <!-- BOTONES -->
+            <!-- PASSWORD END -->
+            <!-- BUTTONS -->
             <div class="mb-3">
               <button
                 type="submit"
@@ -59,7 +63,6 @@
               >
                 Login
               </button>
-
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -68,8 +71,8 @@
                 Registro
               </button>
             </div>
-
-            <!-- ALERT POR ERROR EN MAIL O PASS -->
+            <!-- BUTTONS END -->
+            <!-- ALERT MAIL OR PASS ERROR -->
             <div
               class="alert alert-danger"
               *ngIf="loginForm.submitted && loginForm.invalid"
@@ -77,6 +80,7 @@
               Por favor, ingrese un email y contraseña válidos (más de 4
               caracteres).
             </div>
+            <!-- ALERT MAIL OR PASS ERROR END-->
           </form>
         </div>
       </div>

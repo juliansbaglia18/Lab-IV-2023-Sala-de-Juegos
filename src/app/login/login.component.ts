@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  user = { email: '', password: '' };
+  user = { email: 'example@mail.com'  , password: 'password' };
   passwordHidden = true;
   passwordFieldType = 'password';
   mostrarPassword = false;
+  
 
   constructor(private router: Router) {}
 

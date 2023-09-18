@@ -29,24 +29,29 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
+    <!-- BUTTON QUIEN SOY -->
     <div class="col-auto">
       <button class="btn btn-outline-primary" (click)="navigateToQuienSoy()">
         <div class="h4">Quien soy</div>
       </button>
     </div>
+    <!-- BUTTON HOME -->
     <div class="col-auto mx-auto">
       <div class="img" (click)="navigateToHome()" id="btn-home">
         <img src="../../favicon.ico" alt="" />
       </div>
     </div>
+    <!-- DROPDOWN USER -->
     <div class="col-auto">
       <li class="nav-item dropdown">
         <div class="dropdown">
-          <button class="dropbtn h4">Nombre - Usuario</button>
+          <button class="dropbtn rounded">
+            <div class="h4">[nombre y apellido]</div>
+          </button>
           <div class="dropdown-content">
-            <a href="#">Dato usuario 1</a>
-            <a href="#">Dato usuario 2</a>
-            <a href="#">Dato usuario 3</a>
+            <a href="#">[Dato usuario 1]</a>
+            <a href="#">[Dato usuario 2]</a>
+            <a href="#">[Dato usuario 3]</a>
             <a (click)="navigateToLogin()" id="btn-cerrar-sesion">
               <strong> CERRAR SESIÓN </strong>
             </a>
