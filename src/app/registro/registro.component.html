@@ -1,7 +1,7 @@
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-md-6">
-      <div class="card">
+      <div class="card cloud-background">
         <div class="card-body">
           <h2 class="card-title">Registro</h2>
           <form (ngSubmit)="register()" #registerForm="ngForm">
@@ -67,36 +67,30 @@
               />
             </div>
             <!-- BOTONES -->
-            <div class="mb-3">
+            <!-- BUTTONS -->
+            <div class="row d-flex justify-content-center align-items-center">
               <button
                 type="submit"
-                class="btn btn-primary"
+                class="col-7 btn btn-primary btn-block m-2"
+         
                 [disabled]="
-                  registerForm.invalid || user.password !== user.confirmPassword
-                "
-                (click)="register()"
+                registerForm.invalid || user.password !== user.confirmPassword
+              "
+              (click)="register()"
               >
-                Registrarse
+                Registrar
               </button>
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="col-7 btn btn-success btn-block m-2"
                 (click)="navigateToLogin()"
-              >
-                Login
-              </button>
-            </div>
 
-            <div
-              class="alert alert-danger"
-              *ngIf="
-                registerForm.submitted &&
-                (registerForm.invalid || user.password !== user.confirmPassword)
-              "
-            >
-              Por favor, ingrese un email válido y contraseñas coincidentes (más
-              de 4 caracteres).
+              >
+                Ingresar
+              </button>
+
             </div>
+            <!-- BUTTONS END -->
           </form>
         </div>
       </div>

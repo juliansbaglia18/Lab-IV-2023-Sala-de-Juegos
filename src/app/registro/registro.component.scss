@@ -5,6 +5,15 @@
   .input-group {
     position: relative;
   }
+
+  .cloud-background {
+    background-image: url('https://img.freepik.com/vector-gratis/lindo-fondo-patron-nubes-esponjosas_53876-117355.jpg?w=2000'); /* Ruta a tu imagen de nube */
+    background-size: cover; /* Ajusta el tamaño del fondo para cubrir toda la card */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-position: center center; /* Posición del fondo */
+    border-radius: 15px; /* Radio de borde para dar una forma suave */
+    padding: 20px; /* Ajusta el relleno según sea necesario */
+  }
   
   .mostrar-ocultar {
     border-top-left-radius: 0;
@@ -19,8 +28,8 @@
   }
   
   .mostrar-ocultar img {
-    max-width: 100%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
-    max-height: 100%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
+    max-width: 80%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
+    max-height: 80%; /* Asegura que la imagen no se agrande más allá del tamaño del botón */
   }
   
   .alert {

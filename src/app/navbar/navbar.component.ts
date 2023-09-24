@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { faDiceSix } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -11,6 +12,9 @@ import { UserService } from '../services/user.service';
 export class NavbarComponent {
   
   public emailUser: any = 'No logueado';
+  public fechaCreacionUser: any = 'No logueado';
+  public nombreUser: any = 'undefinded';
+  public datoUser: any = 'No logueado';
   
   constructor(
     private router: Router,
@@ -19,7 +23,19 @@ export class NavbarComponent {
 
 
   ngOnInit(){
-    this.emailUser = this.userService.getInfoUsuarioLoggeado();
+    // this.emailUser = this.userService.getInfoUsuarioLoggeado();
+    this.obtenerUser();
+  }
+
+  obtenerUser(){
+    this.userService.getUserLogged().subscribe(res=>{
+      console.log(res?.email);
+      console.log(res?.metadata.creationTime);
+      this.emailUser = res?.email;
+      this.fechaCreacionUser = res?.metadata.creationTime;
+      this.datoUser = res?.metadata.lastSignInTime;
+      console.log(res);
+    });
   }
 
   // Navegar a la página Home
@@ -38,15 +54,8 @@ export class NavbarComponent {
   }
 
   logOut() {
-    this.userService.logOut()
-      .then(() => {
-        // El cierre de sesión fue exitoso, redirige al usuario a la página de inicio (home) u otra página de tu elección.
-        this.router.navigateByUrl('login');
-      })
-      .catch((error) => {
-        // Maneja el error, por ejemplo, muestra un mensaje de error
-        console.error('Error al cerrar sesión:', error);
-      });
+    this.userService.logOut();
+    this.navigateToLogin();
   }
 
 

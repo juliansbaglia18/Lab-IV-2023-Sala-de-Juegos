@@ -45,13 +45,22 @@
     <div class="col-auto">
       <li class="nav-item dropdown">
         <div class="dropdown">
-          <button class="dropbtn rounded">
+          <button class="dropbtn rounded" (click)="obtenerUser()">
             <div class="h4">{{ emailUser }}</div>
           </button>
           <div class="dropdown-content">
-            <a href="#">[Dato usuario 1]</a>
-            <a href="#">[Dato usuario 2]</a>
-            <a href="#">[Dato usuario 3]</a>
+            <div class="text"> <strong>
+              Fecha de creación: 
+            </strong><br> {{ fechaCreacionUser }}</div>
+            <div class="text"> <strong>
+              Nombre           
+              </strong><br> {{ nombreUser }}
+            </div>
+            <div class="text"> <strong>
+              Fecha última conexión
+            </strong><br> {{ datoUser }}
+          </div>
+       
             <a (click)="logOut()" id="btn-cerrar-sesion">
               <strong> CERRAR SESIÓN </strong>
             </a>

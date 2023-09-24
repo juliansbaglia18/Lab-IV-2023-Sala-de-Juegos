@@ -22,19 +22,14 @@ export class RegistroComponent {
     ) {}
 
   register() {
-    // Llama a la función register del servicio UserService
-  this.userService.register({
-    email: this.user.email,
-    password: this.user.password,
-  })
-  .then((result) => {
-    // El registro fue exitoso, puedes redirigir al usuario a la página de inicio (home)
-    this.router.navigateByUrl('home');
-  })
-  .catch((error) => {
-    // Mensaje de error. (MODIFICAR)
-    console.error('Error al registrar:', error);
-  });
+
+    const {email, password} = this.user;
+
+    this.userService.register(email, password).then(res=>{
+      console.log("Registro", res);
+      this.router.navigateByUrl('home');
+    })
+ 
   }
 
   togglePasswordVisibility() {

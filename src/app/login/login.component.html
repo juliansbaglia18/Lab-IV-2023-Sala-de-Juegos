@@ -1,18 +1,19 @@
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <div class="col-md-6">
-      <div class="card">
+      <div class="card cloud-background" id="">
         <div class="card-body">
           <h2 class="card-title">Login</h2>
           <form (ngSubmit)="login()" #loginForm="ngForm">
             <!-- EMAIL -->
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label h5">Email</label>
               <input
                 type="email"
+                placeholder="Ingrese su email"
                 class="form-control"
                 id="email"
-                value="example@mail.com"
+                value=""
                 name="email"
                 [(ngModel)]="user.email"
                 required
@@ -22,24 +23,36 @@
             <!-- EMAIL END -->
             <!-- PASSWORD -->
             <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
+              <label for="password" class="form-label h5">Password</label>
               <div class="input-group">
-                <input
+                <!-- <input
                   type="{{ passwordFieldType }}"
                   class="form-control"
                   id="password"
                   name="password"
-                  value="example"
+                  value="123456"
                   [(ngModel)]="user.password"
                   required
                   minlength="5"
-                />
+                /> -->
+              
+                <input type="{{ passwordFieldType }}" class="form-control" placeholder="Ingrese la contraseña" name="password" value="" [(ngModel)]="user.password" required
+                minlength="6">
+
+
+              
                 <button
+                  class="mostrar-ocultar btn btn-outline-secondary"
+                  type="button"
+                  (click)="mostrarPassword = !mostrarPassword"
+                  (click)="togglePasswordVisibility()"
+                >
+                <!-- <button
                   class="mostrar-ocultar btn btn-outline-secondary"
                   type="button"
                   (click)="togglePasswordVisibility()"
                   (click)="mostrarPassword = !mostrarPassword"
-                >
+                > -->
                   <img
                     *ngIf="mostrarPassword"
                     src="assets/images/cerrar-ojo.png"
@@ -51,26 +64,57 @@
                     alt="Ojo abierto"
                   />
                 </button>
+              
               </div>
             </div>
             <!-- PASSWORD END -->
             <!-- BUTTONS -->
-            <div class="mb-3">
+              <div class="row d-flex justify-content-center align-items-center">
               <button
                 type="submit"
-                class="btn btn-primary"
+                class="col-7 btn btn-primary btn-block m-2"
                 [disabled]="loginForm.invalid"
                 (click)="login()"
               >
-                Login
+                Ingresar
               </button>
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="col-7 btn btn-success btn-block m-2"
                 (click)="navigateToRegistration()"
               >
                 Registro
               </button>
+
+              <button
+                type="button"
+                class="col-7 btn btn-danger btn-block m-2 disabled"
+                (click)="loginConGoogle()"
+                disabled
+              >
+                Ingresar con Google
+              </button>
+              <div class="row d-flex justify-content-center align-items-center">
+              <button
+                type="button"
+                class="col-3 btn btn-warning btn-block m-2"
+                (click)="accesoRapido()"
+              >
+              <strong>
+
+                Acceso Rápido 1
+              </strong>
+              </button>
+              <button
+                type="button"
+                class="col-3 btn btn-info btn-block m-2"
+                (click)="accesoRapido2()"
+              ><strong>
+
+                Acceso Rápido 2
+              </strong>
+              </button>
+            </div>
             </div>
             <!-- BUTTONS END -->
             <!-- ALERT MAIL OR PASS ERROR -->
