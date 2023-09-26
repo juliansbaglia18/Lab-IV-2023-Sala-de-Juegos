@@ -48,20 +48,30 @@
           <button class="dropbtn rounded" (click)="obtenerUser()">
             <div class="h4">{{ emailUser }}</div>
           </button>
-          <div class="dropdown-content">
-            <div class="text"> <strong>
-              Fecha de creación: 
-            </strong><br> {{ fechaCreacionUser }}</div>
-            <div class="text"> <strong>
+          <div class="dropdown-content border border-primary-subtle">
+            <div
+              class="text border-bottom border-primary-subtle font-monospace"
+            >
+              <strong> Fecha de creación: </strong><br />
+              {{ fechaCreacionUser }}
+            </div>
+            <!-- MUESTRA EL NOMBRE DEL USUARIO -->
+            <!-- <div class="text"> <strong>
               Nombre           
               </strong><br> {{ nombreUser }}
+            </div> -->
+            <div
+              class="text border-bottom border-primary-subtle font-monospace"
+            >
+              <strong> Fecha de última conexión </strong><br />
+              {{ datoUser }}
             </div>
-            <div class="text"> <strong>
-              Fecha última conexión
-            </strong><br> {{ datoUser }}
-          </div>
-       
-            <a (click)="logOut()" id="btn-cerrar-sesion">
+
+            <a
+              (click)="logOut()"
+              id="btn-cerrar-sesion"
+              class="text-center fw-semibold"
+            >
               <strong> CERRAR SESIÓN </strong>
             </a>
           </div>
