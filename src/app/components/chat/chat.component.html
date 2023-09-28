@@ -1,0 +1,32 @@
+<div class="card text-center chat-close border-success" *ngIf="usuarioLogeado">
+
+<div class="card-header">
+  Click para chatear!
+</div>
+
+</div>
+<div class="card text-center chat border-success prueba" *ngIf="usuarioLogeado">
+
+
+        <div class="card-header">
+            Chateá!
+        </div>
+        <div class="card-body">
+            <div class="contenedor-mensajes h-100" id="contenedorMensajes">
+                <p *ngFor="let mensaje of mensajes" class="msj p-1" [ngClass]="(usuarioLogeado.uid==mensaje.emisor)? 'enviado' : 'recibido'">
+                    {{ mensaje.texto }}
+                </p>
+            </div>
+        </div>
+        <form class="card-footer text-body-secondary input-group" (ngSubmit)="enviarMensaje()">
+            
+            <input type="text" class="form-control border-success" placeholder="Escribe aquí!" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="nuevoMensaje" [ngModelOptions]="{standalone: true}">
+            <div class="input-group-append" (click)="enviarMensaje()">
+                <span class="input-group-text btn" id="basic-addon2">
+                    <img src="../../../assets/images/enviar.png" alt="" class="img-enviar" width="25px">
+                </span>
+            </div>
+            
+        </form>
+    
+  </div>

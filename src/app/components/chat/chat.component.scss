@@ -1,0 +1,67 @@
+.chat-close {
+    width: 300px;
+    height: 40px;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+.chat {
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+.card-header{
+    background-color: rgb(9, 212, 9);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card-body {
+    padding: 0.5rem;
+    background-image: url('https://i.pinimg.com/originals/2e/87/5b/2e875b64f102a0e04b8d14741a1befed.png');
+    background-size: 70%;
+    height: 80%; /* Ajusta la altura del contenedor de mensajes para permitir el scroll */
+  }
+
+.img-enviar:active{
+    transform: scale(.8);
+}
+
+.prueba{
+    display: none;
+}
+
+.enviado{
+    display: block;
+    float: right;
+    background-color: rgb(9, 212, 9);
+    color: white;
+    min-width: 50.1%;
+    border-radius: 30px;
+}
+
+.recibido{
+    display: block;
+    float: left;
+    background-color: rgb(9, 146, 236);
+    color: white;
+    min-width: 50.1%;
+    border-radius: 30px;
+}
+
+
+.contenedor-mensajes {
+    /* Elimina la propiedad overflow y agrega max-height */
+    max-height: 100%; /* Establece una altura máxima para el contenedor de mensajes */
+    padding: .3rem;
+    overflow-y: auto; /* Añade esta propiedad para habilitar el scroll vertical */
+
+  }
+
+.contenedor-mensajes::-webkit-scrollbar{
+    display: none;
+}
